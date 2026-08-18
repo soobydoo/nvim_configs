@@ -1,0 +1,14 @@
+# .swps 
+*.swp
+*.swo
+*.tmp
+*~
+
+# session history etc
+undo/
+sessions/
+.netrwhist
+
+# OS stuff
+.DS_Store
+Thumbs.db
