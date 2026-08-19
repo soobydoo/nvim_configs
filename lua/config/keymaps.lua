@@ -20,9 +20,16 @@ map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete current buffer" })
 
--- Fast file saving and quitting
+-- Fast file saving, creating and quitting
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
+map("n", "<leader>fn", function()
+  vim.ui.input({ prompt = "New file path: ", completion = "file" }, function(input)
+    if input and input ~= "" then
+      vim.cmd("edit " .. vim.fn.fnameescape(input))
+    end
+  end)
+end, { desc = "Create / open new file prompt" })
 
 -- Move text up and down in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
