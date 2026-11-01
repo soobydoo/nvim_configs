@@ -4,19 +4,22 @@ Leader key is mapped to `<Space>`.
 
 ---
 
-## 1. File Explorer & Tree Navigation (`mini.files`)
+## 1. File Creation & File Explorer (`mini.files`)
 
-| Keymap | Action |
+| Action / Keymap | How to use |
 | :--- | :--- |
-| `<leader>e` or `-` | Open File Explorer at **current file's directory** |
-| `<leader>E` | Open File Explorer at **project root** |
-| `l` / `<CR>` | Enter folder / open file |
-| `h` / `-` | Go up a directory level |
-| `q` | Close file explorer |
-| `g?` | Show interactive file explorer keymap help |
-| `=` | Synchronize / save filesystem changes (create/rename/delete) |
+| **`<leader>fn`** | Prompts for a new file path with autocompletion, then opens it |
+| **`:e path/to/file.rs`** | Opens a buffer for that path (creates on `:w` / `<leader>w`) |
+| **`:vsp path/to/file.rs`** | Opens the new file in a vertical split |
+| **`<leader>e`** or **`-`** | Open File Explorer at **current file's directory** |
+| **`<leader>E`** | Open File Explorer at **project root** |
 
-> **Pro Tip:** In `mini.files`, you can create new files or folders by simply editing text in the column and pressing `=` to save changes!
+### Creating files inside the File Explorer (`mini.files`):
+1. Press `<leader>e` or `-` to open the explorer.
+2. Navigate to the desired folder.
+3. Press `o` (or `i`/`a`) to insert a new line in the list and type the file name (e.g. `utils.rs` or `models/user.rs`).
+4. Press `=` (synchronize) to create it on disk.
+5. Press `<CR>` or `l` to open the new file.
 
 ---
 
@@ -44,6 +47,8 @@ Leader key is mapped to `<Space>`.
 | :--- | :--- |
 | `K` | Rust hover actions & documentation popup |
 | `gd` | Go to definition |
+| `<C-o>` | Jump backward to previous location (after `gd`) |
+| `<C-i>` | Jump forward in jumplist |
 | `gD` | Go to declaration |
 | `gi` | Go to implementation |
 | `gr` | Find all references |
